@@ -1,10 +1,11 @@
 use extended_primitives::Buffer;
 use fasthash::murmur3;
 
+//TODO move into it's own file, and only expose in lib.
 pub struct BloomFilter {
-    filter: Buffer,
-    n: u32,
-    tweak: u32,
+    pub filter: Buffer,
+    pub n: u32,
+    pub tweak: u32,
 }
 
 const OFFSET: u32 = 0xfba4c795;
