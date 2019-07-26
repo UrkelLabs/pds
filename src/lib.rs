@@ -29,8 +29,13 @@ impl BloomFilter {
         }
     }
 
-    pub fn new_with_filter(filter: Buffer, n: u32, tweak: u32) -> Self {
-        BloomFilter { filter, n, tweak }
+    pub fn new_with_filter(filter: Vec<u8>, n: u32, tweak: u32) -> Self {
+        //TODO figure out if we want to use buffer or vecu8.
+        BloomFilter {
+            filter: Buffer::from(filter),
+            n,
+            tweak,
+        }
     }
 
     pub fn add(&mut self, value: &[u8]) {
