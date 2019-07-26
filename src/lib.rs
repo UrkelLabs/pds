@@ -29,6 +29,10 @@ impl BloomFilter {
         }
     }
 
+    pub fn new_with_filter(filter: Buffer, n: u32, tweak: u32) -> Self {
+        BloomFilter { filter, n, tweak }
+    }
+
     pub fn add(&mut self, value: &[u8]) {
         for i in 0..self.n {
             let index = self.hash(value, i);
