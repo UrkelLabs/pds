@@ -2,6 +2,7 @@ use extended_primitives::Buffer;
 use fasthash::murmur3;
 
 //TODO move into it's own file, and only expose in lib.
+#[derive(Debug, Clone, PartialEq)]
 pub struct BloomFilter {
     pub filter: Buffer,
     pub n: u32,
